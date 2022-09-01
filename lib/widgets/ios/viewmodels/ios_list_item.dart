@@ -1,7 +1,24 @@
 import 'package:flutter/material.dart';
 import "package:flutter/cupertino.dart";
 
-class IosProfile extends StatelessWidget {
+class IosProfile extends StatefulWidget {
+  @override
+  State<IosProfile> createState() => _IosProfileState();
+}
+
+class _IosProfileState extends State<IosProfile> {
+  var isFavorite = false;
+
+  void toggleIsFavorite() {
+    setState(() {
+      if (isFavorite) {
+        isFavorite = false;
+      } else {
+        isFavorite = true;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -82,7 +99,7 @@ class IosProfile extends StatelessWidget {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const [
+              children: [
                 Icon(
                   CupertinoIcons.mail,
                   color: CupertinoColors.systemGrey,
@@ -91,9 +108,21 @@ class IosProfile extends StatelessWidget {
                   CupertinoIcons.refresh,
                   color: CupertinoColors.systemGrey,
                 ),
-                Icon(
-                  CupertinoIcons.heart,
-                  color: CupertinoColors.systemGrey,
+                GestureDetector(
+                  child: isFavorite
+                      ? Icon(
+                          CupertinoIcons.heart_fill,
+                          color: CupertinoColors.systemRed,
+                        )
+                      : GestureDetector(
+                          child: Icon(
+                            CupertinoIcons.heart,
+                            color: CupertinoColors.systemGrey,
+                          ),
+                        ),
+                  onTap: () {
+                    toggleIsFavorite();
+                  },
                 ),
                 Icon(
                   CupertinoIcons.bookmark,

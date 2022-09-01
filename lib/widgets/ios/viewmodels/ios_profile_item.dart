@@ -17,7 +17,7 @@ class IosProfileItem extends StatelessWidget {
                 child: CircleAvatar(
                   backgroundColor: CupertinoColors.inactiveGray,
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(40),
+                    borderRadius: BorderRadius.circular(100),
                     child: GestureDetector(
                       child: Image.network(
                         "https://static.wikia.nocookie.net/multiversus/images/6/65/Batman_Profile_Icon.png/revision/latest?cb=20220802200801",

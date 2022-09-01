@@ -26,9 +26,13 @@ class IosHomePage extends StatefulWidget {
 
 class _IosHomePageState extends State<IosHomePage> {
   List<TodoItem> todoList = [];
-
+  final appBar = AppBar(
+    title: const Text("BatmanPic"),
+  );
   @override
   Widget build(BuildContext context) {
+    final isLandscape =
+        MediaQuery.of(context).orientation == Orientation.landscape;
     return CupertinoPageScaffold(
       navigationBar: const CupertinoNavigationBar(
         middle: Text("Pofile Page IOS"),
@@ -114,6 +118,50 @@ class _IosHomePageState extends State<IosHomePage> {
                               },
                             ),
                           ),
+                          isLandscape
+                              ? Column(
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(top: 10.0),
+                                    ),
+                                    Row(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.only(left: 100),
+                                        ),
+                                        Container(
+                                          height: (MediaQuery.of(context)
+                                                      .size
+                                                      .height -
+                                                  appBar.preferredSize.height -
+                                                  MediaQuery.of(context)
+                                                      .padding
+                                                      .top) *
+                                              0.7,
+                                          width: (MediaQuery.of(context)
+                                                      .size
+                                                      .height -
+                                                  appBar.preferredSize.height -
+                                                  MediaQuery.of(context)
+                                                      .padding
+                                                      .top) *
+                                              0.8,
+                                          child: CircleAvatar(
+                                            backgroundColor:
+                                                CupertinoColors.inactiveGray,
+                                            child: ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(150),
+                                              child: Image.network(
+                                                  "https://i.pinimg.com/280x280_RS/66/6d/c2/666dc2534961774fd151453879157c26.jpg"),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                )
+                              : Container(),
                         ],
                       ),
                     ],
@@ -250,7 +298,7 @@ class _IosHomePageState extends State<IosHomePage> {
                                         padding: EdgeInsets.only(left: 5.0),
                                       ),
                                       Text(
-                                        "4.9",
+                                        "4.9 million",
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -262,7 +310,7 @@ class _IosHomePageState extends State<IosHomePage> {
                                         "Followers",
                                         style: TextStyle(
                                             color: CupertinoColors.systemGrey),
-                                      )
+                                      ),
                                     ],
                                   ),
                                 ],
