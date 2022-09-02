@@ -100,22 +100,22 @@ class _IosProfileState extends State<IosProfile> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Icon(
+                const Icon(
                   CupertinoIcons.mail,
                   color: CupertinoColors.systemGrey,
                 ),
-                Icon(
+                const Icon(
                   CupertinoIcons.refresh,
-                  color: CupertinoColors.systemGrey,
+                  color: CupertinoColors.systemGreen,
                 ),
                 GestureDetector(
                   child: isFavorite
-                      ? Icon(
+                      ? const Icon(
                           CupertinoIcons.heart_fill,
                           color: CupertinoColors.systemRed,
                         )
                       : GestureDetector(
-                          child: Icon(
+                          child: const Icon(
                             CupertinoIcons.heart,
                             color: CupertinoColors.systemGrey,
                           ),
@@ -124,7 +124,7 @@ class _IosProfileState extends State<IosProfile> {
                     toggleIsFavorite();
                   },
                 ),
-                Icon(
+                const Icon(
                   CupertinoIcons.bookmark,
                   color: CupertinoColors.systemGrey,
                 ),

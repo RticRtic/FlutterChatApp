@@ -6,20 +6,17 @@ import 'package:todo_list_android_ios/models/todo_item.dart';
 import 'package:todo_list_android_ios/widgets/ios/ios_edit_profilepage.dart';
 import 'package:todo_list_android_ios/widgets/ios/viewmodels/ios_list_item.dart';
 
-// class MyIosApp extends StatelessWidget {
-//   const MyIosApp({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return CupertinoApp(
-//       home: IosHomePage([]),
-//     );
-//   }
-// }
+class MyIosApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoApp(
+      debugShowCheckedModeBanner: false,
+      home: IosHomePage(),
+    );
+  }
+}
 
 class IosHomePage extends StatefulWidget {
-  List<TodoItem> titleList;
-  IosHomePage(this.titleList);
   @override
   State<IosHomePage> createState() => _IosHomePageState();
 }
@@ -49,7 +46,7 @@ class _IosHomePageState extends State<IosHomePage> {
                   Container(
                     height: 70,
                     width: 70,
-                    padding: EdgeInsets.only(top: 4),
+                    padding: const EdgeInsets.only(top: 4),
                     decoration: const BoxDecoration(
                       borderRadius: BorderRadius.all(
                         Radius.circular(50.0),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:todo_list_android_ios/screens/ios_tweetScreen.dart';
 import 'package:todo_list_android_ios/widgets/ios/viewmodels/ios_profile_item.dart';
 
 class IosEditProfilePage extends StatelessWidget {
@@ -27,22 +28,44 @@ class IosEditProfilePage extends StatelessWidget {
         ),
         child: CupertinoTabScaffold(
           tabBar: CupertinoTabBar(
-            items: const <BottomNavigationBarItem>[
+            items: <BottomNavigationBarItem>[
               BottomNavigationBarItem(
-                  icon: Icon(
-                    CupertinoIcons.person,
+                  icon: GestureDetector(
+                    child: const Icon(CupertinoIcons.person),
+                    onTap: () {
+                      Navigator.of(context).push(
+                        CupertinoPageRoute(
+                            builder: (BuildContext context) =>
+                                IosEditProfilePage()),
+                      );
+                    },
                   ),
                   label: "ProfileAccount"),
               BottomNavigationBarItem(
-                  icon: Icon(
-                    CupertinoIcons.list_bullet,
+                  icon: GestureDetector(
+                    child:
+                        const Icon(CupertinoIcons.list_bullet_below_rectangle),
+                    onTap: () {
+                      Navigator.of(context).push(
+                        CupertinoPageRoute(
+                            builder: (BuildContext context) =>
+                                IosTweetScreen()),
+                      );
+                    },
                   ),
-                  label: "Lists"),
+                  label: "Tweets"),
               BottomNavigationBarItem(
-                  icon: Icon(
-                    CupertinoIcons.bookmark,
+                  icon: GestureDetector(
+                    child: const Icon(CupertinoIcons.person),
+                    onTap: () {
+                      Navigator.of(context).push(
+                        CupertinoPageRoute(
+                            builder: (BuildContext context) =>
+                                IosEditProfilePage()),
+                      );
+                    },
                   ),
-                  label: "Bookmarks"),
+                  label: "ProfileAccount"),
               BottomNavigationBarItem(
                   icon: Icon(
                     CupertinoIcons.arrow_left_circle,

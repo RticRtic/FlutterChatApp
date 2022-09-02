@@ -29,6 +29,14 @@ class IosProfileItem extends StatelessWidget {
                   ),
                 ),
               ),
+              const Text("Photo"),
+              const Padding(
+                padding: EdgeInsets.only(left: 5),
+              ),
+              const Icon(
+                CupertinoIcons.settings,
+                color: CupertinoColors.systemGrey,
+              )
             ],
           ),
           Column(
@@ -70,6 +78,9 @@ class IosProfileItem extends StatelessWidget {
                   ),
                 ],
               ),
+              const Divider(
+                color: Colors.black,
+              ),
               Column(
                 children: [
                   const Padding(
@@ -91,6 +102,9 @@ class IosProfileItem extends StatelessWidget {
                       const Padding(
                         padding: EdgeInsets.only(left: 5),
                       ),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 50),
+                      ),
                       GestureDetector(
                         child: GestureDetector(
                           child: IosActionSheet(),
@@ -100,15 +114,113 @@ class IosProfileItem extends StatelessWidget {
                         },
                       ),
                     ],
-                  )
+                  ),
+                  const Divider(
+                    color: Colors.black,
+                  ),
                 ],
               ),
             ],
           ),
           Column(
             children: [
+              const Padding(
+                padding: EdgeInsets.only(top: 5.0),
+              ),
               Row(
-                children: [],
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.only(left: 20),
+                  ),
+                  const Text(
+                    "Location:",
+                    style: TextStyle(color: CupertinoColors.systemGrey),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 210),
+                  ),
+                  GestureDetector(
+                    child: GestureDetector(
+                      child: IosActionSheet(),
+                    ),
+                    onTap: () {
+                      print("Change TagName");
+                    },
+                  ),
+                ],
+              ),
+              const Divider(
+                color: Colors.black,
+              ),
+            ],
+          ),
+          Column(
+            children: [
+              const Padding(
+                padding: EdgeInsets.only(top: 5.0),
+              ),
+              Row(
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.only(left: 20),
+                  ),
+                  const Text(
+                    "Website:",
+                    style: TextStyle(color: CupertinoColors.systemGrey),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 210),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 5),
+                  ),
+                  GestureDetector(
+                    child: GestureDetector(
+                      child: IosActionSheet(),
+                    ),
+                    onTap: () {
+                      print("Change TagName");
+                    },
+                  ),
+                ],
+              ),
+              const Divider(
+                color: Colors.black,
+              ),
+            ],
+          ),
+          Column(
+            children: [
+              const Padding(
+                padding: EdgeInsets.only(top: 5.0),
+              ),
+              Row(
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.only(left: 20),
+                  ),
+                  const Text(
+                    "Bio:",
+                    style: TextStyle(color: CupertinoColors.systemGrey),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 250),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 5),
+                  ),
+                  GestureDetector(
+                    child: GestureDetector(
+                      child: IosActionSheet(),
+                    ),
+                    onTap: () {
+                      print("Change TagName");
+                    },
+                  ),
+                ],
+              ),
+              const Divider(
+                color: Colors.black,
               ),
             ],
           ),

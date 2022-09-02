@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:todo_list_android_ios/models/todo_item.dart';
 import 'package:todo_list_android_ios/widgets/android/viewmodels/android_edit_profilepage.dart';
 import 'package:todo_list_android_ios/widgets/android/viewmodels/android_profile.dart';
-import 'package:todo_list_android_ios/widgets/ios/ios_screen.dart';
+import 'package:todo_list_android_ios/screens/ios_screen.dart';
 import 'package:todo_list_android_ios/widgets/drawer_items.dart';
 import 'package:todo_list_android_ios/widgets/android/todo_list_widget.dart';
 import "dart:io";
@@ -17,14 +17,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Platform.isIOS
+    return Platform.isAndroid
         ? MaterialApp(
             debugShowCheckedModeBanner: false,
             home: HomePage(),
           )
         : CupertinoApp(
             debugShowCheckedModeBanner: false,
-            home: IosHomePage([]),
+            home: IosHomePage(),
           );
   }
 }
