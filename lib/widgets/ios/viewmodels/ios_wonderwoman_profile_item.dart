@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
-class IosSpidermanProfileItem extends StatefulWidget {
+class IosWonderwomanProfileItem extends StatefulWidget {
+  const IosWonderwomanProfileItem({super.key});
+
   @override
-  State<IosSpidermanProfileItem> createState() =>
-      _IosSpidermanProfileItemState();
+  State<IosWonderwomanProfileItem> createState() =>
+      _IosWonderwomanProfileItemState();
 }
 
-class _IosSpidermanProfileItemState extends State<IosSpidermanProfileItem> {
+class _IosWonderwomanProfileItemState extends State<IosWonderwomanProfileItem> {
   var isFavorite = false;
 
   void toggleIsFavorite() {
@@ -41,7 +43,7 @@ class _IosSpidermanProfileItemState extends State<IosSpidermanProfileItem> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(40),
                   child: Image.network(
-                      "https://w7.pngwing.com/pngs/811/750/png-transparent-spider-man-homecoming-captain-america-logo-marvel-comics-spider-man-comics-heroes-superhero-thumbnail.png"),
+                      "https://www.squiggles.com.sa/web/image/product.product/23665/image_256/%5BFP-DCCPP0004%5D%20Funko%20Pop%21%20Pin%20DC%20Comics:Wonder%20Woman?unique=02336bd"),
                 ),
               ),
             ),
@@ -53,7 +55,7 @@ class _IosSpidermanProfileItemState extends State<IosSpidermanProfileItem> {
                       padding: EdgeInsets.only(left: 60.0),
                     ),
                     Text(
-                      "Tobey Maguire",
+                      "Gal Gadot",
                       style: TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 15.0),
                     ),
@@ -61,7 +63,7 @@ class _IosSpidermanProfileItemState extends State<IosSpidermanProfileItem> {
                       padding: EdgeInsets.only(left: 5.0),
                     ),
                     Text(
-                      "@WebSpinner",
+                      "@Strong Gal",
                       style: TextStyle(
                           fontSize: 10.0, color: CupertinoColors.systemGrey),
                     ),
@@ -82,7 +84,7 @@ class _IosSpidermanProfileItemState extends State<IosSpidermanProfileItem> {
                             Padding(
                               padding: EdgeInsets.only(left: 10.0),
                             ),
-                            Text("'Like, nesting and resting'"),
+                            Text("'Fighting does not make you a hero'"),
                           ],
                         )
                       ],

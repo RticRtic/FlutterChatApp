@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:todo_list_android_ios/screens/ios_screen.dart';
+import 'package:todo_list_android_ios/widgets/ios/viewmodels/ios_spiderman_profile_item.dart';
+import 'package:todo_list_android_ios/widgets/ios/viewmodels/ios_wonderwoman_profile_item.dart';
 
 import '../widgets/ios/viewmodels/ios_list_item.dart';
 
 class IosTweetScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return CupertinoApp(
+    return const CupertinoApp(
       debugShowCheckedModeBanner: false,
       home: IosTweetHomeScreen(),
     );
@@ -60,10 +62,26 @@ class _IosTweetHomeScreenState extends State<IosTweetHomeScreen> {
       child: SingleChildScrollView(
         padding: const EdgeInsets.only(top: 5.0),
         child: Column(
-          children: List.generate(
-            8,
-            (index) => IosProfile(),
-          ),
+          children: [
+            Column(
+              children: List.generate(
+                3,
+                (index) => IosProfile(),
+              ),
+            ),
+            Column(
+              children: List.generate(
+                3,
+                (index) => IosSpidermanProfileItem(),
+              ),
+            ),
+            Column(
+              children: List.generate(
+                3,
+                (index) => const IosWonderwomanProfileItem(),
+              ),
+            ),
+          ],
         ),
       ),
     );

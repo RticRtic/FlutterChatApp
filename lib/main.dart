@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Platform.isAndroid
+    return Platform.isIOS
         ? MaterialApp(
             debugShowCheckedModeBanner: false,
             home: HomePage(),
