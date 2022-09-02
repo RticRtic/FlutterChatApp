@@ -131,11 +131,16 @@ class _DraweritemsState extends State<Draweritems> {
                     style: TextStyle(color: Colors.grey),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: 40.0),
+                    padding: EdgeInsets.only(left: 8.0),
                   ),
                   Icon(Icons.people),
                   Padding(
                     padding: EdgeInsets.only(left: 5),
+                  ),
+                  Text(
+                    "4.9 mill",
+                    style: TextStyle(
+                        color: Colors.black, fontWeight: FontWeight.bold),
                   ),
                   Text(
                     "Followers",
