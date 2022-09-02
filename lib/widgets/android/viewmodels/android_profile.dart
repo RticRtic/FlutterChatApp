@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import "package:flutter/cupertino.dart";
+import 'package:flutter/cupertino.dart';
 
-class IosProfile extends StatefulWidget {
+class AndroidProfile extends StatefulWidget {
   @override
-  State<IosProfile> createState() => _IosProfileState();
+  State<AndroidProfile> createState() => _AndroidProfileState();
 }
 
-class _IosProfileState extends State<IosProfile> {
+class _AndroidProfileState extends State<AndroidProfile> {
   var isFavorite = false;
 
   void toggleIsFavorite() {
@@ -38,7 +38,7 @@ class _IosProfileState extends State<IosProfile> {
               ),
               child: CircleAvatar(
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(40),
+                  borderRadius: BorderRadius.circular(15),
                   child: Image.network(
                       "https://static.wikia.nocookie.net/multiversus/images/6/65/Batman_Profile_Icon.png/revision/latest?cb=20220802200801"),
                 ),
@@ -61,8 +61,7 @@ class _IosProfileState extends State<IosProfile> {
                     ),
                     Text(
                       "@Villian Hunter",
-                      style: TextStyle(
-                          fontSize: 10.0, color: CupertinoColors.systemGrey),
+                      style: TextStyle(fontSize: 10.0, color: Colors.grey),
                     ),
                   ],
                 ),
@@ -101,17 +100,17 @@ class _IosProfileState extends State<IosProfile> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 const Icon(
-                  CupertinoIcons.mail,
-                  color: CupertinoColors.systemGrey,
+                  Icons.message_sharp,
+                  color: CupertinoColors.activeBlue,
                 ),
                 const Icon(
-                  CupertinoIcons.refresh,
-                  color: CupertinoColors.systemGreen,
+                  Icons.refresh,
+                  color: CupertinoColors.systemGrey,
                 ),
                 GestureDetector(
                   child: isFavorite
                       ? const Icon(
-                          CupertinoIcons.heart_fill,
+                          Icons.favorite,
                           color: CupertinoColors.systemRed,
                         )
                       : GestureDetector(
@@ -125,7 +124,7 @@ class _IosProfileState extends State<IosProfile> {
                   },
                 ),
                 const Icon(
-                  CupertinoIcons.bookmark,
+                  Icons.bookmark_border,
                   color: CupertinoColors.systemGrey,
                 ),
               ],

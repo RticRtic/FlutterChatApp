@@ -23,7 +23,7 @@ class _IosActionSheetState extends State<IosActionSheet> {
     showCupertinoModalPopup<void>(
       context: context,
       builder: (BuildContext context) => CupertinoActionSheet(
-        title: const Text('Edit Name'),
+        title: const Text('Edit'),
         message: CupertinoTextField(
           placeholder: "Name",
           placeholderStyle: const TextStyle(color: CupertinoColors.black),
@@ -60,7 +60,7 @@ class _IosActionSheetState extends State<IosActionSheet> {
     return Container(
       height: 50,
       width: 50,
-      margin: EdgeInsets.only(bottom: 8),
+      margin: const EdgeInsets.only(bottom: 8),
       child: CupertinoButton(
         child: const Icon(
           CupertinoIcons.eyedropper,

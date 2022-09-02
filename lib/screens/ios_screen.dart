@@ -6,29 +6,29 @@ import 'package:todo_list_android_ios/models/todo_item.dart';
 import 'package:todo_list_android_ios/widgets/ios/ios_edit_profilepage.dart';
 import 'package:todo_list_android_ios/widgets/ios/viewmodels/ios_list_item.dart';
 
-// class MyIosApp extends StatelessWidget {
-//   const MyIosApp({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return CupertinoApp(
-//       home: IosHomePage([]),
-//     );
-//   }
-// }
+class MyIosApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoApp(
+      debugShowCheckedModeBanner: false,
+      home: IosHomePage(),
+    );
+  }
+}
 
 class IosHomePage extends StatefulWidget {
-  List<TodoItem> titleList;
-  IosHomePage(this.titleList);
   @override
   State<IosHomePage> createState() => _IosHomePageState();
 }
 
 class _IosHomePageState extends State<IosHomePage> {
-  List<TodoItem> todoList = [];
-
+  final appBar = AppBar(
+    title: const Text("BatmanPic"),
+  );
   @override
   Widget build(BuildContext context) {
+    final isLandscape =
+        MediaQuery.of(context).orientation == Orientation.landscape;
     return CupertinoPageScaffold(
       navigationBar: const CupertinoNavigationBar(
         middle: Text("Pofile Page IOS"),
@@ -46,7 +46,7 @@ class _IosHomePageState extends State<IosHomePage> {
                   Container(
                     height: 70,
                     width: 70,
-                    padding: EdgeInsets.only(top: 4),
+                    padding: const EdgeInsets.only(top: 4),
                     decoration: const BoxDecoration(
                       borderRadius: BorderRadius.all(
                         Radius.circular(50.0),
@@ -108,12 +108,56 @@ class _IosHomePageState extends State<IosHomePage> {
                                 Navigator.of(context).push(
                                   CupertinoPageRoute(
                                     builder: (BuildContext context) =>
-                                        IosEditProfilePage(),
+                                        const IosEditProfilePage(),
                                   ),
                                 );
                               },
                             ),
                           ),
+                          isLandscape
+                              ? Column(
+                                  children: [
+                                    const Padding(
+                                      padding: EdgeInsets.only(top: 10.0),
+                                    ),
+                                    Row(
+                                      children: [
+                                        const Padding(
+                                          padding: EdgeInsets.only(left: 100),
+                                        ),
+                                        Container(
+                                          height: (MediaQuery.of(context)
+                                                      .size
+                                                      .height -
+                                                  appBar.preferredSize.height -
+                                                  MediaQuery.of(context)
+                                                      .padding
+                                                      .top) *
+                                              0.7,
+                                          width: (MediaQuery.of(context)
+                                                      .size
+                                                      .height -
+                                                  appBar.preferredSize.height -
+                                                  MediaQuery.of(context)
+                                                      .padding
+                                                      .top) *
+                                              0.8,
+                                          child: CircleAvatar(
+                                            backgroundColor:
+                                                CupertinoColors.inactiveGray,
+                                            child: ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(150),
+                                              child: Image.network(
+                                                  "https://i.pinimg.com/280x280_RS/66/6d/c2/666dc2534961774fd151453879157c26.jpg"),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                )
+                              : Container(),
                         ],
                       ),
                     ],
@@ -240,7 +284,7 @@ class _IosHomePageState extends State<IosHomePage> {
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: const [
                                       Padding(
-                                        padding: EdgeInsets.only(left: 41),
+                                        padding: EdgeInsets.only(left: 45),
                                       ),
                                       Icon(
                                         Icons.follow_the_signs,
@@ -250,7 +294,7 @@ class _IosHomePageState extends State<IosHomePage> {
                                         padding: EdgeInsets.only(left: 5.0),
                                       ),
                                       Text(
-                                        "4.9",
+                                        "4.9 million",
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -262,7 +306,7 @@ class _IosHomePageState extends State<IosHomePage> {
                                         "Followers",
                                         style: TextStyle(
                                             color: CupertinoColors.systemGrey),
-                                      )
+                                      ),
                                     ],
                                   ),
                                 ],

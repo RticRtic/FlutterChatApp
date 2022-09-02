@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import "package:flutter/cupertino.dart";
+import 'package:flutter/cupertino.dart';
 
-class IosProfile extends StatefulWidget {
+class IosSpidermanProfileItem extends StatefulWidget {
   @override
-  State<IosProfile> createState() => _IosProfileState();
+  State<IosSpidermanProfileItem> createState() =>
+      _IosSpidermanProfileItemState();
 }
 
-class _IosProfileState extends State<IosProfile> {
+class _IosSpidermanProfileItemState extends State<IosSpidermanProfileItem> {
   var isFavorite = false;
 
   void toggleIsFavorite() {
@@ -40,7 +41,7 @@ class _IosProfileState extends State<IosProfile> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(40),
                   child: Image.network(
-                      "https://static.wikia.nocookie.net/multiversus/images/6/65/Batman_Profile_Icon.png/revision/latest?cb=20220802200801"),
+                      "https://w7.pngwing.com/pngs/811/750/png-transparent-spider-man-homecoming-captain-america-logo-marvel-comics-spider-man-comics-heroes-superhero-thumbnail.png"),
                 ),
               ),
             ),
@@ -52,7 +53,7 @@ class _IosProfileState extends State<IosProfile> {
                       padding: EdgeInsets.only(left: 60.0),
                     ),
                     Text(
-                      "Christian Bale",
+                      "Tobey Maguire",
                       style: TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 15.0),
                     ),
@@ -60,7 +61,7 @@ class _IosProfileState extends State<IosProfile> {
                       padding: EdgeInsets.only(left: 5.0),
                     ),
                     Text(
-                      "@Villian Hunter",
+                      "@WebSpinner",
                       style: TextStyle(
                           fontSize: 10.0, color: CupertinoColors.systemGrey),
                     ),
@@ -81,7 +82,7 @@ class _IosProfileState extends State<IosProfile> {
                             Padding(
                               padding: EdgeInsets.only(left: 10.0),
                             ),
-                            Text("'Hiding in the dark and fuck u up'"),
+                            Text("'Like, nesting and resting'"),
                           ],
                         )
                       ],

@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
-import "package:flutter/cupertino.dart";
+import 'package:flutter/cupertino.dart';
 
-class IosProfile extends StatefulWidget {
+class IosWonderwomanProfileItem extends StatefulWidget {
+  const IosWonderwomanProfileItem({super.key});
+
   @override
-  State<IosProfile> createState() => _IosProfileState();
+  State<IosWonderwomanProfileItem> createState() =>
+      _IosWonderwomanProfileItemState();
 }
 
-class _IosProfileState extends State<IosProfile> {
+class _IosWonderwomanProfileItemState extends State<IosWonderwomanProfileItem> {
   var isFavorite = false;
 
   void toggleIsFavorite() {
@@ -40,7 +43,7 @@ class _IosProfileState extends State<IosProfile> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(40),
                   child: Image.network(
-                      "https://static.wikia.nocookie.net/multiversus/images/6/65/Batman_Profile_Icon.png/revision/latest?cb=20220802200801"),
+                      "https://www.squiggles.com.sa/web/image/product.product/23665/image_256/%5BFP-DCCPP0004%5D%20Funko%20Pop%21%20Pin%20DC%20Comics:Wonder%20Woman?unique=02336bd"),
                 ),
               ),
             ),
@@ -52,7 +55,7 @@ class _IosProfileState extends State<IosProfile> {
                       padding: EdgeInsets.only(left: 60.0),
                     ),
                     Text(
-                      "Christian Bale",
+                      "Gal Gadot",
                       style: TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 15.0),
                     ),
@@ -60,7 +63,7 @@ class _IosProfileState extends State<IosProfile> {
                       padding: EdgeInsets.only(left: 5.0),
                     ),
                     Text(
-                      "@Villian Hunter",
+                      "@Strong Gal",
                       style: TextStyle(
                           fontSize: 10.0, color: CupertinoColors.systemGrey),
                     ),
@@ -81,7 +84,7 @@ class _IosProfileState extends State<IosProfile> {
                             Padding(
                               padding: EdgeInsets.only(left: 10.0),
                             ),
-                            Text("'Hiding in the dark and fuck u up'"),
+                            Text("'Fighting does not make you a hero'"),
                           ],
                         )
                       ],
