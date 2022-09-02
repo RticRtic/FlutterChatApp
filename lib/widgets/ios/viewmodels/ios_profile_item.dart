@@ -51,7 +51,7 @@ class IosProfileItem extends StatelessWidget {
                     padding: EdgeInsets.only(left: 5),
                   ),
                   const Text(
-                    "Christian Bayle",
+                    "Christian Bale",
                     style:
                         TextStyle(fontWeight: FontWeight.bold, fontSize: 25.0),
                   ),

@@ -25,7 +25,6 @@ class IosHomePage extends StatefulWidget {
 }
 
 class _IosHomePageState extends State<IosHomePage> {
-  List<TodoItem> todoList = [];
   final appBar = AppBar(
     title: const Text("BatmanPic"),
   );
@@ -112,7 +111,7 @@ class _IosHomePageState extends State<IosHomePage> {
                                 Navigator.of(context).push(
                                   CupertinoPageRoute(
                                     builder: (BuildContext context) =>
-                                        IosEditProfilePage(),
+                                        const IosEditProfilePage(),
                                   ),
                                 );
                               },
@@ -121,12 +120,12 @@ class _IosHomePageState extends State<IosHomePage> {
                           isLandscape
                               ? Column(
                                   children: [
-                                    Padding(
+                                    const Padding(
                                       padding: EdgeInsets.only(top: 10.0),
                                     ),
                                     Row(
                                       children: [
-                                        Padding(
+                                        const Padding(
                                           padding: EdgeInsets.only(left: 100),
                                         ),
                                         Container(
@@ -288,7 +287,7 @@ class _IosHomePageState extends State<IosHomePage> {
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: const [
                                       Padding(
-                                        padding: EdgeInsets.only(left: 41),
+                                        padding: EdgeInsets.only(left: 45),
                                       ),
                                       Icon(
                                         Icons.follow_the_signs,
