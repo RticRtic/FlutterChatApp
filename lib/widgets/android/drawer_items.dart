@@ -3,7 +3,9 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:todo_list_android_ios/models/todo_item.dart';
+import 'package:todo_list_android_ios/screens/android_tweets_screen.dart';
 import 'package:todo_list_android_ios/widgets/android/viewmodels/android_edit_profilepage.dart';
+import 'package:todo_list_android_ios/widgets/android/viewmodels/android_tweets_modalSheet.dart';
 
 class Draweritems extends StatefulWidget {
   // final Function addNewTodo;
@@ -191,17 +193,37 @@ class _DraweritemsState extends State<Draweritems> {
                 padding: EdgeInsets.only(top: 50),
               ),
               Row(
-                children: const [
-                  Padding(
+                children: [
+                  const Padding(
                     padding: EdgeInsets.only(left: 25),
                   ),
-                  Icon(Icons.list),
-                  Padding(
+                  GestureDetector(
+                    child: const Icon(Icons.list),
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              AndroidTweetScreenHomePage(),
+                        ),
+                      );
+                    },
+                  ),
+                  const Padding(
                     padding: EdgeInsets.only(left: 10),
                   ),
-                  Text(
-                    "Lists",
-                    style: TextStyle(color: Colors.grey),
+                  GestureDetector(
+                    child: const Text(
+                      "Tweets",
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              AndroidTweetScreenHomePage(),
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),

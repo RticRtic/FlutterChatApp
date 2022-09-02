@@ -3,7 +3,8 @@ import 'package:todo_list_android_ios/models/todo_item.dart';
 import 'package:todo_list_android_ios/widgets/android/viewmodels/android_edit_profilepage.dart';
 import 'package:todo_list_android_ios/widgets/android/viewmodels/android_profile.dart';
 import 'package:todo_list_android_ios/screens/ios_screen.dart';
-import 'package:todo_list_android_ios/widgets/drawer_items.dart';
+import 'package:todo_list_android_ios/widgets/android/viewmodels/android_tweets_modalSheet.dart';
+import 'package:todo_list_android_ios/widgets/android/drawer_items.dart';
 import 'package:todo_list_android_ios/widgets/android/todo_list_widget.dart';
 import "dart:io";
 import "package:flutter/cupertino.dart";
@@ -35,17 +36,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<TodoItem> todoList = [];
-
-  void addTodo(String title) {
-    final newTodo = TodoItem(title: title);
-    setState(() {
-      todoList.add(newTodo);
-    });
-  }
-
-  void resetTodoList() {
-    todoList = [];
+  void startModalSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (_) => GestureDetector(child: AndroidTweetsModalsheet()),
+    );
   }
 
   @override
@@ -361,7 +356,9 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          startModalSheet(context);
+        },
         child: const Icon(Icons.read_more),
       ),
     );
