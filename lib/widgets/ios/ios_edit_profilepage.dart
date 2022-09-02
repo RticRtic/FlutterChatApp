@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:todo_list_android_ios/screens/ios_tweetScreen.dart';
+import 'package:todo_list_android_ios/screens/iosScreens/ios_tweetScreen.dart';
 import 'package:todo_list_android_ios/widgets/ios/viewmodels/ios_profile_item.dart';
 
 class IosEditProfilePage extends StatelessWidget {

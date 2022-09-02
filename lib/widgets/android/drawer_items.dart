@@ -3,7 +3,8 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:todo_list_android_ios/models/todo_item.dart';
-import 'package:todo_list_android_ios/screens/android_tweets_screen.dart';
+import 'package:todo_list_android_ios/screens/androidScreens/android_login_screen.dart';
+import 'package:todo_list_android_ios/screens/androidScreens/android_tweets_screen.dart';
 import 'package:todo_list_android_ios/widgets/android/viewmodels/android_edit_profilepage.dart';
 import 'package:todo_list_android_ios/widgets/android/viewmodels/android_tweets_modalSheet.dart';
 
@@ -262,17 +263,37 @@ class _DraweritemsState extends State<Draweritems> {
                 padding: EdgeInsets.only(top: 50),
               ),
               Row(
-                children: const [
-                  Padding(
+                children: [
+                  const Padding(
                     padding: EdgeInsets.only(left: 25),
                   ),
-                  Icon(Icons.arrow_circle_left_outlined),
-                  Padding(
+                  GestureDetector(
+                    child: const Icon(Icons.arrow_circle_left_outlined),
+                    onTap: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              AndroidLoginHompageScreen(),
+                        ),
+                      );
+                    },
+                  ),
+                  const Padding(
                     padding: EdgeInsets.only(left: 10),
                   ),
-                  Text(
-                    "Logout",
-                    style: TextStyle(color: Colors.grey),
+                  GestureDetector(
+                    child: const Text(
+                      "Logout",
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                    onTap: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              AndroidLoginHompageScreen(),
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),

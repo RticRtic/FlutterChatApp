@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:todo_list_android_ios/screens/ios_screen.dart';
+import 'package:todo_list_android_ios/screens/iosScreens/ios_screen.dart';
 import 'package:todo_list_android_ios/widgets/ios/viewmodels/ios_spiderman_profile_item.dart';
 import 'package:todo_list_android_ios/widgets/ios/viewmodels/ios_wonderwoman_profile_item.dart';
 
-import '../widgets/ios/viewmodels/ios_list_item.dart';
+import '../../widgets/ios/viewmodels/ios_list_item.dart';
 
 class IosTweetScreen extends StatelessWidget {
   @override

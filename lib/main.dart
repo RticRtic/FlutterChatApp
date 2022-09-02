@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:todo_list_android_ios/models/todo_item.dart';
+import 'package:todo_list_android_ios/screens/androidScreens/android_login_screen.dart';
 import 'package:todo_list_android_ios/widgets/android/viewmodels/android_edit_profilepage.dart';
 import 'package:todo_list_android_ios/widgets/android/viewmodels/android_profile.dart';
-import 'package:todo_list_android_ios/screens/ios_screen.dart';
+import 'package:todo_list_android_ios/screens/iosScreens/ios_screen.dart';
 import 'package:todo_list_android_ios/widgets/android/viewmodels/android_tweets_modalSheet.dart';
 import 'package:todo_list_android_ios/widgets/android/drawer_items.dart';
 import 'package:todo_list_android_ios/widgets/android/todo_list_widget.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
     return Platform.isIOS
         ? MaterialApp(
             debugShowCheckedModeBanner: false,
-            home: HomePage(),
+            home: AndroidLoginHompageScreen(),
           )
         : CupertinoApp(
             debugShowCheckedModeBanner: false,
