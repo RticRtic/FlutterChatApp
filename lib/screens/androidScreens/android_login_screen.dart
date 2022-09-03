@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:todo_list_android_ios/main.dart';
+import 'package:todo_list_android_ios/screens/androidScreens/android_signup_screen.dart';
 
 class AndroidLoginScreen extends StatelessWidget {
   @override
@@ -24,7 +25,6 @@ class _AndroidLoginHompageScreenState extends State<AndroidLoginHompageScreen> {
 
   String password = "";
 
-  // Toggles the password show status
   void toggleHideTextFieldPassword() {
     setState(() {
       if (hideTextFieldPassword) {
@@ -71,13 +71,14 @@ class _AndroidLoginHompageScreenState extends State<AndroidLoginHompageScreen> {
                   ),
                 ),
                 GestureDetector(
-                  child: GestureDetector(
-                    child: const Text("Log in"),
-                    onTap: () {
-                      Navigator.of(context).pushReplacement(MaterialPageRoute(
-                          builder: (BuildContext context) => HomePage()));
-                    },
-                  ),
+                  child: const Text("Log in"),
+                  onTap: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => HomePage(),
+                      ),
+                    );
+                  },
                 ),
               ],
             ),
@@ -95,7 +96,6 @@ class _AndroidLoginHompageScreenState extends State<AndroidLoginHompageScreen> {
                   width: 250,
                   child: TextFormField(
                     keyboardType: TextInputType.text,
-                    obscureText: !hideTextFieldPassword,
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
@@ -106,11 +106,7 @@ class _AndroidLoginHompageScreenState extends State<AndroidLoginHompageScreen> {
                           Icons.mail,
                           color: Colors.grey,
                         ),
-                        onPressed: () {
-                          setState(() {
-                            hideTextFieldPassword = !hideTextFieldPassword;
-                          });
-                        },
+                        onPressed: () {},
                       ),
                     ),
                   ),
@@ -127,7 +123,6 @@ class _AndroidLoginHompageScreenState extends State<AndroidLoginHompageScreen> {
                       filled: true,
                       fillColor: Colors.white,
                       labelText: 'Password',
-                      hintText: 'Enter your password',
                       suffixIcon: IconButton(
                         icon: Icon(
                           hideTextFieldPassword
@@ -185,11 +180,7 @@ class _AndroidLoginHompageScreenState extends State<AndroidLoginHompageScreen> {
                   width: 55,
                   margin: const EdgeInsets.only(bottom: 5.0),
                   padding: const EdgeInsets.only(top: 4),
-                  decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(1.0),
-                    ),
-                  ),
+                  decoration: const BoxDecoration(),
                   child: const CircleAvatar(
                     backgroundColor: Colors.white,
                     child: ClipRRect(
@@ -201,9 +192,16 @@ class _AndroidLoginHompageScreenState extends State<AndroidLoginHompageScreen> {
                     ),
                   ),
                 ),
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => AndroidSignUppScreen(),
+                    ),
+                  );
+                },
               ),
             ],
-          )
+          ),
         ],
       ),
     );
