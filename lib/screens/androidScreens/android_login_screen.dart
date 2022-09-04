@@ -9,6 +9,7 @@ class AndroidLoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: AndroidLoginHompageScreen(),
     );
   }
@@ -37,6 +38,8 @@ class _AndroidLoginHompageScreenState extends State<AndroidLoginHompageScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final isLandscape =
+        MediaQuery.of(context).orientation == Orientation.landscape;
     return Scaffold(
       backgroundColor: Colors.blue,
       appBar: AppBar(
@@ -85,124 +88,214 @@ class _AndroidLoginHompageScreenState extends State<AndroidLoginHompageScreen> {
           ],
         ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  width: 250,
-                  child: TextFormField(
-                    keyboardType: TextInputType.text,
-                    decoration: InputDecoration(
-                      filled: true,
-                      fillColor: Colors.white,
-                      labelText: 'Phone, Email or Username ',
-                      hintText: '',
-                      suffixIcon: IconButton(
-                        icon: const Icon(
-                          Icons.mail,
-                          color: Colors.grey,
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            isLandscape
+                ? const Padding(
+                    padding: EdgeInsets.only(top: 10),
+                  )
+                : const Padding(
+                    padding: EdgeInsets.only(top: 120),
+                  ),
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: 250,
+                    child: TextFormField(
+                      keyboardType: TextInputType.text,
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Colors.white,
+                        labelText: 'Phone, Email or Username ',
+                        hintText: '',
+                        suffixIcon: IconButton(
+                          icon: const Icon(
+                            Icons.mail,
+                            color: Colors.grey,
+                          ),
+                          onPressed: () {},
                         ),
-                        onPressed: () {},
                       ),
                     ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 10.0),
+                  ),
+                  SizedBox(
+                    width: 250,
+                    child: TextFormField(
+                      keyboardType: TextInputType.text,
+                      obscureText: !hideTextFieldPassword,
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Colors.white,
+                        labelText: 'Password',
+                        suffixIcon: IconButton(
+                          icon: Icon(
+                            hideTextFieldPassword
+                                ? Icons.visibility
+                                : Icons.visibility_off,
+                            color: Colors.grey,
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              hideTextFieldPassword = !hideTextFieldPassword;
+                            });
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Column(
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(top: 10),
+                ),
+                GestureDetector(
+                  child: const Text(
+                    "Forget Password?",
+                    style: TextStyle(color: Colors.white),
                   ),
                 ),
                 const Padding(
                   padding: EdgeInsets.only(top: 10.0),
                 ),
-                SizedBox(
-                  width: 250,
-                  child: TextFormField(
-                    keyboardType: TextInputType.text,
-                    obscureText: !hideTextFieldPassword,
-                    decoration: InputDecoration(
-                      filled: true,
-                      fillColor: Colors.white,
-                      labelText: 'Password',
-                      suffixIcon: IconButton(
-                        icon: Icon(
-                          hideTextFieldPassword
-                              ? Icons.visibility
-                              : Icons.visibility_off,
-                          color: Colors.grey,
+                const Text("Or"),
+                const Padding(
+                  padding: EdgeInsets.only(top: 10.0),
+                ),
+                const Text(
+                  "Login With",
+                  style: TextStyle(color: Colors.white),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 10.0),
+                ),
+                Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          height: 55,
+                          width: 55,
+                          margin: const EdgeInsets.only(bottom: 10.0),
+                          padding: const EdgeInsets.only(top: 4),
+                          decoration: const BoxDecoration(),
+                          child: CircleAvatar(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(15),
+                              child: GestureDetector(
+                                child: Image.network(
+                                    "https://cdn.icon-icons.com/icons2/2108/PNG/512/google_icon_130924.png"),
+                                onTap: () {},
+                              ),
+                            ),
+                          ),
                         ),
-                        onPressed: () {
-                          setState(() {
-                            hideTextFieldPassword = !hideTextFieldPassword;
-                          });
-                        },
+                        const Padding(
+                          padding: EdgeInsets.only(left: 10.0),
+                        ),
+                        Container(
+                          height: 55,
+                          width: 55,
+                          margin: const EdgeInsets.only(bottom: 10.0),
+                          padding: const EdgeInsets.only(top: 4),
+                          decoration: const BoxDecoration(),
+                          child: CircleAvatar(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(30),
+                              child: GestureDetector(
+                                child: Image.network(
+                                    "https://i.pinimg.com/736x/75/e6/2b/75e62b8aac17c75a4f4514a6c2aa4093.jpg"),
+                                onTap: () {},
+                              ),
+                            ),
+                          ),
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.only(left: 10.0),
+                        ),
+                        Container(
+                          height: 55,
+                          width: 55,
+                          margin: const EdgeInsets.only(bottom: 10.0),
+                          padding: const EdgeInsets.only(top: 4),
+                          decoration: const BoxDecoration(),
+                          child: CircleAvatar(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: GestureDetector(
+                                child: Image.network(
+                                    "https://norrkopingsdanscenter.se/wp-content/uploads/2012/12/facebook-logo.png"),
+                                onTap: () {},
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                )
+              ],
+            ),
+            Column(
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(top: 80),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Text(
+                      "New To Heroes?",
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 5),
+                ),
+                GestureDetector(
+                  child: Container(
+                    height: 55,
+                    width: 55,
+                    margin: const EdgeInsets.only(bottom: 5.0),
+                    padding: const EdgeInsets.only(top: 4),
+                    decoration: const BoxDecoration(),
+                    child: const CircleAvatar(
+                      backgroundColor: Colors.white,
+                      child: ClipRRect(
+                        child: Text(
+                          "Sign Up!",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(color: Colors.black),
+                        ),
                       ),
                     ),
                   ),
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            AndroidSignUppScreen(),
+                      ),
+                    );
+                  },
                 ),
               ],
             ),
-          ),
-          Column(
-            children: [
-              const Padding(
-                padding: EdgeInsets.only(top: 10),
-              ),
-              GestureDetector(
-                child: const Text(
-                  "Forget Password?",
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            ],
-          ),
-          Column(
-            children: [
-              const Padding(
-                padding: EdgeInsets.only(top: 80),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    "New To Heroes?",
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
-              ),
-              const Padding(
-                padding: EdgeInsets.only(top: 5),
-              ),
-              GestureDetector(
-                child: Container(
-                  height: 55,
-                  width: 55,
-                  margin: const EdgeInsets.only(bottom: 5.0),
-                  padding: const EdgeInsets.only(top: 4),
-                  decoration: const BoxDecoration(),
-                  child: const CircleAvatar(
-                    backgroundColor: Colors.white,
-                    child: ClipRRect(
-                      child: Text(
-                        "Sign Up!",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.black),
-                      ),
-                    ),
-                  ),
-                ),
-                onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (BuildContext context) => AndroidSignUppScreen(),
-                    ),
-                  );
-                },
-              ),
-            ],
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

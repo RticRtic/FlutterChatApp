@@ -56,7 +56,7 @@ class IosEditProfilePage extends StatelessWidget {
                   label: "Tweets"),
               BottomNavigationBarItem(
                   icon: GestureDetector(
-                    child: const Icon(CupertinoIcons.person),
+                    child: const Icon(CupertinoIcons.settings),
                     onTap: () {
                       Navigator.of(context).push(
                         CupertinoPageRoute(
@@ -65,8 +65,8 @@ class IosEditProfilePage extends StatelessWidget {
                       );
                     },
                   ),
-                  label: "ProfileAccount"),
-              BottomNavigationBarItem(
+                  label: "Settings"),
+              const BottomNavigationBarItem(
                   icon: Icon(
                     CupertinoIcons.arrow_left_circle,
                   ),
